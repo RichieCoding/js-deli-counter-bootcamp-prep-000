@@ -1,8 +1,16 @@
 // Function that adds a customer and lets them know the position of line they're at.
-function takeANumber(line, person) {
-  line.push(person);
-  return 'Welcome, ' + person + '. You are number ' + line.length + ' in line.';
+// function takeANumber(line, person) {
+//   line.push(person);
+//   return 'Welcome, ' + person + '. You are number ' + line.length + ' in line.';
+// }
+let ticketNumber = 0;
+
+function takeANumber(line) {
+  ticketNumber ++;
+  line.push(ticketNumber);
+  return `You are ${ticketNumber}`
 }
+let line = [2,3,4,5,6]
 
 // Function that serves the first person in line and if nobody is on line it'll say that.
 function nowServing(line) {
@@ -20,7 +28,7 @@ function currentLine(line) {
   } else {
       let currentLine = [];
       for (let i = 0; i < line.length; i ++) {
-        currentLine.push( i+1 + '. ' + line[i]);
+        currentLine.push( i+1 + '. ' + line[i]); 
     }
     return 'The line is currently: ' + currentLine.join(', ' );
   }
